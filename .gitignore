@@ -1,0 +1,20 @@
+*.pyc
+
+# IDE files
+.idea/
+.tmp/
+
+# coverage
+.coverage
+coverage/
+
+# docs
+docs/_build
+
+# local virtualenv
+/.venv*
+/activate
+
+# package builds
+/dist
+/*.egg-info

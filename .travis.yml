@@ -1,0 +1,18 @@
+language: python
+python:
+- '2.7'
+- '3.5'
+- '3.6'
+install:
+- pip install coveralls
+script:
+- nosetests --with-coverage --cover-package=yzconfig
+after_success: coveralls
+deploy:
+  provider: pypi
+  user: ykshatroff
+  password:
+    secure: cvjERVJnAIcamkI/cCEU8+GK1NB2Xa3zyYxP47YJypsifrDPYKJNJPC89wfoExnxu5fq51Qc4b8mY6YNdGJ5yXZLNd+c4QE6v2JwuWPD/lkL0c/XL/T7RDMvXqzEA8Gypy9bW2xEbh1Fve5PWtofpPqzgbeZPcGIxvLjYZ5GFklhlQLXmyzgL7IyYU+weTOowPRwvcTd3K9ALwIMckW+VPh9TN8ImeulAXuf//jidtx4SIV71OKYwtza0CbzbgguzbrHgoGNCOD8uiQnkxZIt940U9o1xWvk2XPgRKYqdXI8h5z+fQFA1kBvHGW1DaRDXSRiPqxoAizXn8g5460X0a6qYmZyuvdwU1sHehBNJwk7o+SpX3/87m4bvizpefUa7XIwIT28hFLnXpGufoC80mk/Gh31mAllZAHcP9Wmhn58axSQgGh/M734qPNm5sHpTHfZSUVaX4Jj7D7vNJCK92Rv8v+Vtm2JnGNHffmuaM/RxFm5zGvDwX2d6FuU1q/4DqebHtUXGtw+N5SGVLRccSLpOGQpF+jppK4jSg3J2eekKBwgtQolMsr/FhgKCHaoVUpGdSwlrjBBSxv8r9H/0RHDWanQauQt0ePebywU7NCgFruYzpXgXQehZA8SZ4XANeBtSDHM78k38kjmwULlWy141Z6wL4A0uTpXAHvI08c=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
